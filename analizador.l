@@ -33,14 +33,14 @@ FILE *archivo_salida;
 "="                { fprintf(archivo_salida, "igual"); }  
 ";"                { fputc(';', archivo_salida); } 
 
-[0-9]+             { fprintf(archivo_salida, "%s", yytext); }  // Números
-[a-zA-Z_][a-zA-Z0-9_]*  { fprintf(archivo_salida, "%s", yytext); }  // Identificadores
+[0-9]+             { fprintf(archivo_salida, "%s", yytext); }  
+[a-zA-Z_][a-zA-Z0-9_]*  { fprintf(archivo_salida, "%s", yytext); }  
 
-\"[^\"\\]*\"       { fprintf(archivo_salida, "\"%s\"", yytext); }  // Cadenas de texto
+\"[^\"\\]*\"       { fprintf(archivo_salida, "\"%s\"", yytext); }  
 
-[ \t]+             { fputc(' ', archivo_salida); }  // Mantener espacios
+[ \t]+             { fputc(' ', archivo_salida); } 
 
-\n                 { fputc('\n', archivo_salida); }  // Mantener saltos de línea
+\n                 { fputc('\n', archivo_salida); }  
 
 %%
 
@@ -63,7 +63,7 @@ int main(int argc, char **argv) {
     }
 
     yyin = archivo;
-    yylex();  // Ejecuta el analizador léxico
+    yylex();  
     fclose(archivo);
     fclose(archivo_salida);
 
