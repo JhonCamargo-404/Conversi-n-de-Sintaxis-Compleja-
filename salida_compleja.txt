@@ -1,0 +1,21 @@
+condicional_si  (a mayor b) {
+ imprimir(""a es mayor que b"");
+ condicional_si  (a igual b) {
+ imprimir(""a es igual a b"");
+ } else {
+ imprimir(""a no es igual a b"");
+ }
+}
+
+ciclo_para  (i igual 0; i menor n; isumarsumar) {
+ condicional_si  (i y (a o b)) {
+ imprimir(""i es verdadero y a o b es verdadero"");
+ }
+ a igual a sumar b;
+ condicional_si  (a mayor 10) {
+ imprimir(""a es mayor que 10"");
+ }
+}
+
+leer();
+imprimir(""fin del programa"");

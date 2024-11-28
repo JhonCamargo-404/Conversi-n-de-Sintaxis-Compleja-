@@ -30,6 +30,9 @@ FILE *archivo_salida;
 "||"               { fprintf(archivo_salida, "o"); }
 "!"                { fprintf(archivo_salida, "no"); }
 
+"="                { fprintf(archivo_salida, "igual"); }  
+";"                { fputc(';', archivo_salida); } 
+
 [0-9]+             { fprintf(archivo_salida, "%s", yytext); }  // Números
 [a-zA-Z_][a-zA-Z0-9_]*  { fprintf(archivo_salida, "%s", yytext); }  // Identificadores
 
@@ -53,7 +56,7 @@ int main(int argc, char **argv) {
         return 1;
     }
 
-    archivo_salida = fopen("salida.txt", "w");
+    archivo_salida = fopen("salida_compleja.txt", "w");
     if (archivo_salida == NULL) {
         perror("No se pudo abrir el archivo de salida");
         return 1;
